@@ -14,8 +14,7 @@ const TodoList = () => {
         })
     })
     const handleComplete =event=>{
-        const name =event.target.value;
-        console.log(name)
+        console.log(event)
     }
     return (
         <div>
@@ -35,7 +34,7 @@ const TodoList = () => {
                                 <th>{index + 1}</th>
                                 <td>{t.task}</td>
                                 <td><Link to={`/edit/${t._id}`}><button className='btn btn-primary btn-sm'>Edit</button></Link></td>
-                                <td><input onClick={()=>handleComplete(t._id)} name="name" type="checkbox" class="checkbox checkbox-secondary" /></td>
+                                <td><input onClick={handleComplete} name="name" type="checkbox" class="checkbox checkbox-secondary" /></td>
                             </tr>)
                         }
                     </tbody>
