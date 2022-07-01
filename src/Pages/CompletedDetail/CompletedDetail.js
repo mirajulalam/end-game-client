@@ -9,7 +9,7 @@ const CompletedDetail = ({complete}) => {
             id:id,
             task:task
         }
-        fetch('http://localhost:5000/finished', {
+        fetch('https://lit-ocean-08264.herokuapp.com/finished', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -19,7 +19,7 @@ const CompletedDetail = ({complete}) => {
         .then(res =>res.json())
         .then(data => console.log(data))
 
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(`https://lit-ocean-08264.herokuapp.com/task/${id}`, {
             method: "DELETE",
         })
         .then(res =>res.json())

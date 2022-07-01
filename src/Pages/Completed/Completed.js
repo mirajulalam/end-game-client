@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 const Completed = () => {
     const [allTask,setAllTask]=useState([]);
-    
+
     useEffect(()=>{
-        fetch('http://localhost:5000/allfinished', {
+        fetch('https://lit-ocean-08264.herokuapp.com/allfinished', {
             method: "GET",
         })
         .then(res => res.json())
