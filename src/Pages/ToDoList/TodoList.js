@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import CompletedDetail from '../CompletedDetail/CompletedDetail';
 
 const TodoList = () => {
     const [allTask,setAllTask]=useState([]);
@@ -13,34 +13,25 @@ const TodoList = () => {
             setAllTask(data)
         })
     })
-    const handleComplete =event=>{
-        console.log(event)
-    }
     return (
-        <div>
-            <div className="overflow-x-auto mt-2">
+            <div className="overflow-x-auto mt-3">
                 <table className="table w-full">
-                    <thead>
-                        <tr>
-                            <th>SR</th>
-                            <th>Task List</th>
-                            <th>Edit</th>
-                            <th>Check if Done</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            allTask.map((t, index) => <tr key={t._id}>
-                                <th>{index + 1}</th>
-                                <td>{t.task}</td>
-                                <td><Link to={`/edit/${t._id}`}><button className='btn btn-primary btn-sm'>Edit</button></Link></td>
-                                <td><input onClick={handleComplete} name="name" type="checkbox" class="checkbox checkbox-secondary" /></td>
-                            </tr>)
-                        }
-                    </tbody>
+                <thead>
+                    <tr>
+                        <th>Task List</th>
+                        <th>Edit</th>
+                        <th>Check if Done</th>
+                    </tr>
+                </thead>
+                    {
+                     allTask.map(complete=><CompletedDetail
+                       key={complete._id}
+                      complete={complete}
+                      index={complete.index}
+                      ></CompletedDetail>)
+                    }
                 </table>
             </div>
-        </div>
     );
 };
 

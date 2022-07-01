@@ -7,8 +7,10 @@ const AddTask = () => {
         const task=event.target.task.value;
 
         const addTask ={
-            task
+            task,
+            checked:false
         }
+        console.log('addtask',addTask)
         fetch('https://lit-ocean-08264.herokuapp.com/task', {
             method: "POST",
             headers: {
@@ -25,7 +27,7 @@ const AddTask = () => {
             })
     }
     return (
-        <div class="hero min-h-screen bg-base-200">
+  <div class="hero min-h-screen bg-base-200">
    <div class="hero-content text-center">
     <div class="max-w-md">
     <div className="card-body">
