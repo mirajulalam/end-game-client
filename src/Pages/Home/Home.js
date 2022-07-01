@@ -1,9 +1,18 @@
 import React from 'react';
+import Calendar from '../Calendar/Calendar';
+import ContactUs from './../ContactUs/ContactUs';
+import About from './../About/About';
+import AddTask from '../AddTask/AddTask';
+import TodoList from '../ToDoList/TodoList';
 
 const Home = () => {
     return (
         <div>
-            <h1>This is home</h1>
+            <AddTask/>
+            <TodoList/>
+            <About/>
+            <Calendar/>
+            <ContactUs/>
         </div>
     );
 };

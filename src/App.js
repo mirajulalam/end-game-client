@@ -7,6 +7,7 @@ import Footer from './Pages/Shared/Footer';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import PageNotfound from './Pages/Shared/PageNotfound';
 import Calendar from './Pages/Calendar/Calendar';
+import TodoList from './Pages/ToDoList/TodoList';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/todo" element={<TodoList />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/about" element={<About />} />
         <Route path="/contactus" element={<ContactUs />} />

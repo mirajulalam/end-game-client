@@ -19,7 +19,7 @@ const ContactUs = () => {
 
     return (
         <section className="max-w-7xl mx-auto px-12">
-            
+            <h1 className="text-4xl font-bold text-center text-primary my-2">Contact Us</h1>
       <div className="flex justify-center items-center my-16 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         <div className="text-center flex-1">
           <form ref={form} onSubmit={sendEmail}>
