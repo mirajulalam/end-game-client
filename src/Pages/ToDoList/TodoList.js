@@ -13,6 +13,10 @@ const TodoList = () => {
             setAllTask(data)
         })
     })
+    const handleComplete =event=>{
+        const name =event.target.value;
+        console.log(name)
+    }
     return (
         <div>
             <div className="overflow-x-auto mt-2">
@@ -31,7 +35,7 @@ const TodoList = () => {
                                 <th>{index + 1}</th>
                                 <td>{t.task}</td>
                                 <td><Link to={`/edit/${t._id}`}><button className='btn btn-primary btn-sm'>Edit</button></Link></td>
-                                <td><input name="name" type="checkbox" class="checkbox checkbox-secondary" /></td>
+                                <td><input onClick={()=>handleComplete(t._id)} name="name" type="checkbox" class="checkbox checkbox-secondary" /></td>
                             </tr>)
                         }
                     </tbody>

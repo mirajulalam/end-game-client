@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import swal from 'sweetalert';
+
 
 const EditTask = () => {
     const {id}=useParams();
@@ -31,13 +33,13 @@ const EditTask = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data,'successfully added')
+                console.log(data,'successfully added');
+                swal("Successfully", "Task edit successfull", "success");
                 event.target.reset();
             })
     }
     return (
         <div>
-            <h2>Edit: {taskList.task}</h2>
             <div class="hero-content text-center">
     <div class="max-w-md">
     <div className="card-body">

@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import contact1 from '../../assets/contact.gif';
+import swal from 'sweetalert';
+
 
 const ContactUs = () => {
     const form = useRef();
@@ -11,6 +13,7 @@ const ContactUs = () => {
     emailjs.sendForm('service_d3mn69j', 'template_bovssme', form.current, 'bC3daaJCpTsOQkKTT')
       .then((result) => {
           console.log(result.text);
+          swal("Successfully", "Email send successfull", "success");
           e.target.reset();
       }, (error) => {
           console.log(error.text);

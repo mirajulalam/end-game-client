@@ -1,4 +1,5 @@
 import React from 'react';
+import swal from 'sweetalert';
 
 const AddTask = () => {
     const handleSubmit =event=>{
@@ -17,7 +18,9 @@ const AddTask = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data,'successfully added')
+                console.log(data,'successfully added');
+                swal("Successfully", "Task added successfull", "success");
+
                 event.target.reset();
             })
     }
