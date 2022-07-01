@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const TodoList = () => {
     const [allTask,setAllTask]=useState([]);
@@ -8,8 +9,8 @@ const TodoList = () => {
             method: "GET",
         })
         .then(res => res.json())
-                .then(data => {
-                setAllTask(data)
+            .then(data => {
+            setAllTask(data)
         })
     })
     return (
@@ -29,8 +30,8 @@ const TodoList = () => {
                             allTask.map((t, index) => <tr key={t._id}>
                                 <th>{index + 1}</th>
                                 <td>{t.task}</td>
-                                <td><button className='btn btn-primary btn-sm'>Edit</button></td>
-                                <td><input type="checkbox" class="checkbox checkbox-secondary" /></td>
+                                <td><Link to={`/edit/${t._id}`}><button className='btn btn-primary btn-sm'>Edit</button></Link></td>
+                                <td><input name="name" type="checkbox" class="checkbox checkbox-secondary" /></td>
                             </tr>)
                         }
                     </tbody>

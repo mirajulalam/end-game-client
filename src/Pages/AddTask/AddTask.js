@@ -36,9 +36,6 @@ const AddTask = () => {
           </label>
           <input type="text" name='task' placeholder="Task" class="input input-bordered" />
         </div>
-        <div class="form-control mt-6">
-          <button class="btn btn-primary">ADD TASK</button>
-        </div>
         </form>
       </div>
     </div>

@@ -8,6 +8,8 @@ import ContactUs from './Pages/ContactUs/ContactUs';
 import PageNotfound from './Pages/Shared/PageNotfound';
 import Calendar from './Pages/Calendar/Calendar';
 import TodoList from './Pages/ToDoList/TodoList';
+import Completed from './Pages/Completed/Completed';
+import EditTask from './Pages/EditTask/EditTask';
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/todo" element={<TodoList />} />
+        <Route path="/completed" element={<Completed />} />
         <Route path="/calendar" element={<Calendar />} />
+        <Route path="/edit/:id" element={<EditTask />} />
         <Route path="/about" element={<About />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="*" element={<PageNotfound />} />
