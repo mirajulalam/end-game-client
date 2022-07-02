@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 
 const CompletedDetail = ({complete}) => {
     const {_id,task}=complete;
@@ -17,7 +18,10 @@ const CompletedDetail = ({complete}) => {
             body: JSON.stringify(addTask)
         })
         .then(res =>res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data);
+            swal("Completed", "Completed added Successfull", "success");
+        })
 
         fetch(`https://lit-ocean-08264.herokuapp.com/task/${id}`, {
             method: "DELETE",
